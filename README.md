@@ -1,15 +1,5 @@
 # Boiler-Plate
 
-## Node.js
-
-자바스크립트를 브라우저에서만이 아닌 서버사이드에서 쓸 수 있게 해줌.
-
-## Express.js
-
-Node.js web application framework
-
-Node.js를 좀 더 쉽게 이용할 수 있다.
-
 ## npm init
 
 package.json을 만들어줌.
@@ -18,11 +8,11 @@ package.json을 만들어줌.
 
 back-end 시작점.
 
-## npm i express --save
+## express
+
+    npm i express --save
 
 --save : package.json dependencies에 express가 추가됨.
-
-## 코드 설명
 
     const express = require('express')
     const app = express()
@@ -42,14 +32,18 @@ back-end 시작점.
 
 5. 5000번 포트에 이 앱을 실행한다.
 
-   "scripts": {
-   "start": "node index.js",
-   "test": "echo \"Error: no test specified\" && exit 1"
-   }
+## package.json
 
-6. npm run start 치면 node index.js 를 실행해준다.
+    "scripts": {
+        "start": "node index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    }
 
-   npm install mongoose --save
+## MongoDB
+
+npm run start 치면 node index.js 를 실행해준다.
+
+    npm install mongoose --save
 
 몽구스 설치, 몽구스를 이용해 어플리케이션과 몽고db를 연결한다.
 
@@ -76,3 +70,42 @@ back-end 시작점.
 4. console.log로 제대로 연결되었는지 확인
 
 5. 에러가 있으면 에러출력
+
+## MongoDB - Schema Model
+
+Model이란 Schema를 감싸주는 역할
+
+Schema는 하나하나의 정보들을 지정해주는 것(?)
+
+    const userSchema = mongoose.Schema({
+        name: {
+            type: String,
+            maxlength: 50
+        },
+        email: {
+            type: String,
+            trim: true, // 공백을 제거하는 역할
+            unique: 1 // 유일하게 하나
+        },
+        password: {
+            type: String,
+            maxlength: 50
+        },
+        role: {
+            type: Number,
+            default: 0 // 임의로 지정하지 않을 경우 0을 준다.
+        },
+        image: String,
+        token: {
+            type: String
+        },
+        tokenExp: {
+            type: Number
+        }
+    });
+
+    const User = mongoose.model("User", userSchema); // Schema를 model로 감싸줌.
+
+    module.exports = { User };
+
+model 의 예시
