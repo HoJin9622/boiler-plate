@@ -48,3 +48,31 @@ back-end 시작점.
    }
 
 6. npm run start 치면 node index.js 를 실행해준다.
+
+   npm install mongoose --save
+
+몽구스 설치, 몽구스를 이용해 어플리케이션과 몽고db를 연결한다.
+
+    const mongoose = require("mongoose");
+    mongoose
+        .connect(
+            "mongodb+srv://kiss0104040:pw@youtube-bldk7.mongodb.net/test?retryWrites=true&w=majority",
+            {
+                useNewUrlParser: true,
+                useUnifiedTopology: true,
+                useCreateIndex: true,
+                useFindAndModify: false
+            }
+        )
+        .then(() => console.log("MongoDB Connected..."))
+        .catch(err => console.log(err));
+
+1. mongoose 모듈을 가져옴.
+
+2. mongoose.connect 로 연결, id,pw 입력함
+
+3. 중괄호안은 이걸 넣어야 에러가 안난다함
+
+4. console.log로 제대로 연결되었는지 확인
+
+5. 에러가 있으면 에러출력
