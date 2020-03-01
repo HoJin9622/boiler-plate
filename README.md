@@ -109,3 +109,21 @@ Schema는 하나하나의 정보들을 지정해주는 것(?)
     module.exports = { User };
 
 model 의 예시
+
+## body-parser와 postman
+
+    npm install body-parser --save
+
+body-parser : body-parser가 client에서 오는 정보를 서버에서 분석해서 가져올 수 있게
+
+postman 설치 : https://www.postman.com/downloads/
+
+postman을 이용해 http://localhost:5000/register 로 body(raw) - json 정보를 보낸다.
+
+    {
+        "name": "test",
+        "email": "test2@gmail.com",
+        "password": "1234567"
+    }
+
+위는 보낸 예시
