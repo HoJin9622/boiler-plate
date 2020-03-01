@@ -127,3 +127,13 @@ postman을 이용해 http://localhost:5000/register 로 body(raw) - json 정보�
     }
 
 위는 보낸 예시
+
+## nodemon
+
+소스 코드의 변경이 있으면 서버를 내렸다가 다시 켜야하는데 껏다 키지않아도 바로 반영해준다.
+
+    npm install nodemon --save-dev
+
+-dev : develope mode, local에서 할때만 사용하겠다는 뜻, devDependencies에 들어가게 된다.
+
+script에 "backend": "nodemon index.js" 추가
