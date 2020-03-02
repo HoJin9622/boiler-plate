@@ -137,3 +137,21 @@ postman을 이용해 http://localhost:5000/register 로 body(raw) - json 정보�
 -dev : develope mode, local에서 할때만 사용하겠다는 뜻, devDependencies에 들어가게 된다.
 
 script에 "backend": "nodemon index.js" 추가
+
+## git
+
+github에 mongodb 비밀번호를 올리면 안되므로 config 폴더에 dev.js, prod.js로 비밀번호를 파일로 나눠준다.
+
+gitignore에 dev.js 파일을 등록한다.
+
+prod.js 는 deploy 할 때 필요, ex) heroku
+
+key.js 는 개발환경인지 배포환경인지 보고 if문으로 선택
+
+## Bcrypt
+
+    npm install bcrypt --save
+
+salt를 이용해서 비밀번호를 암호화, salt를 먼저 생성
+
+saltRounds는 salt가 몇글자인지 나타냄.
