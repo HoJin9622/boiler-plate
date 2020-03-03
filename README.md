@@ -152,6 +152,8 @@ key.js 는 개발환경인지 배포환경인지 보고 if문으로 선택
 
     npm install bcrypt --save
 
+https://www.npmjs.com/package/bcrypt
+
 salt를 이용해서 비밀번호를 암호화, salt를 먼저 생성
 
 saltRounds는 salt가 몇글자인지 나타냄.
