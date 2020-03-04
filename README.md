@@ -157,3 +157,18 @@ https://www.npmjs.com/package/bcrypt
 salt를 이용해서 비밀번호를 암호화, salt를 먼저 생성
 
 saltRounds는 salt가 몇글자인지 나타냄.
+
+## jsonwebtoken
+
+    npm install jsonwebtoken --save
+
+https://www.npmjs.com/package/jsonwebtoken
+
+토큰 생성
+
+## cookie-parser
+
+    npm install cookie-parser --save
+    app.user(cookieParser());
+
+쿠키 저장에 필요
