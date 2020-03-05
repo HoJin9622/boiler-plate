@@ -43,17 +43,8 @@ userSchema.pre("save", function(next) {
         next();
       });
     });
-  } else {
-    next(); // 비밀 번호를 바꾸는게 아닐경우 next()로 다음꺼 실행
   }
 }); // user model의 정보를 save하기 전에 function() 을 한다.
-
-userSchema.methods.comparePassword = function(plainPassword, cb) {
-  // plainPassword 1234567와 데이터베이스에 있는 암호화된 비밀번호가 같은지 체크
-  bcrypt.compare(plainPassword, this.password, function(err, isMatch) {
-    if (err) return cb(err), cb(null, isMatch);
-  });
-};
 
 const User = mongoose.model("User", userSchema); // Schema를 model로 감싸줌.
 
