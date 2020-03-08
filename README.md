@@ -175,6 +175,12 @@ https://www.npmjs.com/package/jsonwebtoken
 
     npx create-react-app .
 
+src 폴더는 웹팩이 관리해주고
+
+public 부분은 웹팩이 관리해주지 않는다.
+
+image파일 같은 것을 넣을땐 src 부분에 넣어서 웹팩의 기능이 작용할 수 있도록 해준다.
+
 점을 붙이면 client 폴더안에 설치하겠다는 의미
 
 ## npm vs npx
