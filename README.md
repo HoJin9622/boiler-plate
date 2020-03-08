@@ -170,3 +170,9 @@ https://www.npmjs.com/package/jsonwebtoken
     app.user(cookieParser());
 
 쿠키 저장에 필요
+
+## react
+
+    npx create-react-app .
+
+점을 붙이면 client 폴더안에 설치하겠다는 의미
