@@ -183,6 +183,24 @@ image파일 같은 것을 넣을땐 src 부분에 넣어서 웹팩의 기능이 
 
 점을 붙이면 client 폴더안에 설치하겠다는 의미
 
+## react router dom
+
+리액트에서는 react router dom으로 페이지를 이동한다.
+
+    npm install react-router-dom --save
+
+    <Route path="/login">
+        <LoginPage />
+    </Route>
+
+위 코드를
+
+    <Route path="/login" component={LoginPage} />
+
+아래처럼 한줄로 작성 가능
+
+path 앞에 exact를 붙여줄 것(왠진 모름 암튼)
+
 ## npm vs npx
 
 npm(node package manager) 은 registry(저장소) 역할, 라이브러리를 담고 있다.
