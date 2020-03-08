@@ -176,3 +176,13 @@ https://www.npmjs.com/package/jsonwebtoken
     npx create-react-app .
 
 점을 붙이면 client 폴더안에 설치하겠다는 의미
+
+## npm vs npx
+
+npm(node package manager) 은 registry(저장소) 역할, 라이브러리를 담고 있다.
+
+배포를 할때 build를 하고 배포를 해야하는데 npm run build처럼 npm을 사용함.
+
+npx 를 사용하면 npm registry 에서 create-react-app을 찾아서 다운로드 없이 실행 시켜준다.
+
+저장 용량을 낭비하지 않을 수 있고 항상 최신 버전을 사용할 수 있다.
