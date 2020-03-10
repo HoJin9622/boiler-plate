@@ -210,3 +210,17 @@ npm(node package manager) 은 registry(저장소) 역할, 라이브러리를 담
 npx 를 사용하면 npm registry 에서 create-react-app을 찾아서 다운로드 없이 실행 시켜준다.
 
 저장 용량을 낭비하지 않을 수 있고 항상 최신 버전을 사용할 수 있다.
+
+## axios
+
+    npm install axios --save
+
+client와 server간의 통신을 할때 사용한다.
+
+client가 없을때는 postman을 사용하여 요청하였는데
+
+client가 있으면 axios로 요청하면 된다.
+
+하지만 client 3000번 port와 server의 5000번 port가 다르기 때문에 5000번 port로 지정해줘야한다.
+
+    axios.get("http://localhost:5000/api/hello")
