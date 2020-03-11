@@ -211,7 +211,7 @@ npx 를 사용하면 npm registry 에서 create-react-app을 찾아서 다운로
 
 저장 용량을 낭비하지 않을 수 있고 항상 최신 버전을 사용할 수 있다.
 
-## axios
+## axios and proxy
 
     npm install axios --save
 
@@ -224,3 +224,39 @@ client가 있으면 axios로 요청하면 된다.
 하지만 client 3000번 port와 server의 5000번 port가 다르기 때문에 5000번 port로 지정해줘야한다.
 
     axios.get("http://localhost:5000/api/hello")
+
+그러나 서로 다른 port는 아무 설정없이 request를 보낼 수 없다.
+
+Cors 정책 때문에 보안을 위해서(Cross-Origin Resource Sharing)
+
+Proxy를 사용하는 방법으로 해결 가능.
+
+https://create-react-app.dev/docs/proxying-api-requests-in-development/
+
+First, install http-proxy-middleware using npm or Yarn:
+
+    $ npm install http-proxy-middleware --save
+    $ # or
+    $ yarn add http-proxy-middleware
+
+Next, create src/setupProxy.js and place the following contents in it:
+
+    const proxy = require('http-proxy-middleware');
+    module.exports = function(app) {
+        // ...
+    };
+
+You can now register proxies as you wish! Here's an example using the above http-proxy-middleware:
+
+    const proxy = require('http-proxy-middleware');
+    module.exports = function(app) {
+        app.use(
+            '/api',
+            proxy({
+                target: 'http://localhost:5000',
+                changeOrigin: true,
+            })
+        );
+    };
+
+주위 : http-proxy-middleware는 react-scripts@0.2.3 이상 버전이야한다. 그러므로 실행이 안될경우 npm i react-scripts를 하자.
