@@ -260,3 +260,27 @@ You can now register proxies as you wish! Here's an example using the above http
     };
 
 주위 : http-proxy-middleware는 react-scripts@0.2.3 이상 버전이야한다. 그러므로 실행이 안될경우 npm i react-scripts를 하자.
+
+proxy server란?
+
+1. 방화벽 기능
+
+2. 웹 필터 기능
+
+3. 캐쉬 데이터, 공유 데이터 제공 기능
+
+proxy server 사용 이유!
+
+1. 회사에서 직원들이나 집안에서 아이들 인터넷 사용 제어
+
+2. 캐쉬를 이용해 더 빠른 인터넷 이용 제공
+
+3. 더 나은 보안 제공
+
+4. 이용 제한된 사이트 접근 가능
+
+## Concurrently
+
+front server와 back server를 한꺼번에 킬 수 있따
+
+    npm install concurrently
