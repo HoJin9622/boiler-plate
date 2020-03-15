@@ -314,3 +314,72 @@ props는 부모 props가 내려다 줌.
 Redux는 State을 관리하는 것.
 
 Redux Store에 바로 주고받기가 가능.
+
+다운받아야할 dependency들
+
+1. redux
+
+2. react-redux
+
+3. redux-promise
+
+4. redux-thunk
+
+3, 4번은 redux middleware
+
+redux store안에 모든 state를 관리하게 된다.
+
+state를 변경하고 싶으면 한가지 방법이 있는데 Dispatch를 이용해서 action으로 변경 가능하다.
+
+action은 plain object (객체형식) 이어야한다.
+
+redux store에서 promise, function 형식이 올 수도 있다.
+
+redux-promise와 redux-thunk는 Dispatch한테 function을 받는 방법과 promise를 대처하는 방법을 알려주는 역할이다.
+
+thunk와 promise 가 없으면 에러가 많이난다.
+
+    import { Provider } from "react-redux";
+
+    ReactDOM.render(
+        <Provider store={}>
+            <App />
+        </Provider>,
+        document.getElementById("root")
+    );
+
+index.js 파일에 Provider를 import 한 후 <App /> 을 <Provider> 사이에 끼워준다.
+
+    import {applyMiddleware, createStore} from "redux";
+    import promiseMiddleware from "redux-promise";
+    import ReduxThunk from "redux-thunk";
+
+    const createStoreWithMiddleware = applyMiddleware(promiseMiddleware, ReduxThunk)(createStore)
+
+    <Provider store={createStoreWithMiddleware()}>
+
+3,4 번 미들웨어 연결 방법
+
+그리고 \_reducers 폴더에 index.js 를 만들고
+
+    import { combineReducers } from "redux";
+        // import user from "./user_reducer";
+
+    const rootReducer = combineReducers({
+        // user,
+    });
+
+    export default rootReducer;
+
+import한다
+
+    import Reducer from "./_reducers";
+
+    <Provider store={createStoreWithMiddleware(Reducer)}>
+
+import 한 후 provider에 넣어줌
+
+redux extension 을 사용하려면 Reducer 뒤에 밑에 코드를 넣어줌
+
+    window.__REDUX_DEVTOOLS_EXTENSION__ &&
+    window.__REDUX_DEVTOOLS_EXTENSION__()
