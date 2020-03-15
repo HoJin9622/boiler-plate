@@ -8,36 +8,42 @@ package.json을 만들어줌.
 
 back-end 시작점.
 
-## express
-
-    npm i express --save
-
---save : package.json dependencies에 express가 추가됨.
-
-    const express = require('express')
-    const app = express()
-    const port = 5000
-
-    app.get('/', (req, res) => res.send('Hello World!'))
-
-    app.listen(port, () => console.log(`Example app listening on port ${port}!`))
-
-1. express 모듈을 가져온다.
-
-2. express() function을 이용해서 새로운 express app을 만들고
-
-3. port 번호를 정해준다.
-
-4. root directory에 오면 Hello World! 를 출력시켜준다.
-
-5. 5000번 포트에 이 앱을 실행한다.
-
 ## package.json
 
     "scripts": {
         "start": "node index.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     }
+
+## nodemon
+
+소스 코드의 변경이 있으면 서버를 내렸다가 다시 켜야하는데 껏다 키지않아도 바로 반영해준다.
+
+    npm install nodemon --save-dev
+
+-dev : develope mode, local에서 할때만 사용하겠다는 뜻, devDependencies에 들어가게 된다.
+
+script에 "backend": "nodemon index.js" 추가
+
+## git
+
+github에 mongodb 비밀번호를 올리면 안되므로 config 폴더에 dev.js, prod.js로 비밀번호를 파일로 나눠준다.
+
+gitignore에 dev.js 파일을 등록한다.
+
+prod.js 는 deploy 할 때 필요, ex) heroku
+
+key.js 는 개발환경인지 배포환경인지 보고 if문으로 선택
+
+## Concurrently
+
+front server와 back server를 한꺼번에 킬 수 있따
+
+    npm install concurrently
+
+    "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
+
+scripts에 위 내용 추가
 
 ## MongoDB
 
@@ -110,6 +116,30 @@ Schema는 하나하나의 정보들을 지정해주는 것(?)
 
 model 의 예시
 
+## express
+
+    npm i express --save
+
+--save : package.json dependencies에 express가 추가됨.
+
+    const express = require('express')
+    const app = express()
+    const port = 5000
+
+    app.get('/', (req, res) => res.send('Hello World!'))
+
+    app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+
+1. express 모듈을 가져온다.
+
+2. express() function을 이용해서 새로운 express app을 만들고
+
+3. port 번호를 정해준다.
+
+4. root directory에 오면 Hello World! 를 출력시켜준다.
+
+5. 5000번 포트에 이 앱을 실행한다.
+
 ## body-parser와 postman
 
     npm install body-parser --save
@@ -127,26 +157,6 @@ postman을 이용해 http://localhost:5000/register 로 body(raw) - json 정보�
     }
 
 위는 보낸 예시
-
-## nodemon
-
-소스 코드의 변경이 있으면 서버를 내렸다가 다시 켜야하는데 껏다 키지않아도 바로 반영해준다.
-
-    npm install nodemon --save-dev
-
--dev : develope mode, local에서 할때만 사용하겠다는 뜻, devDependencies에 들어가게 된다.
-
-script에 "backend": "nodemon index.js" 추가
-
-## git
-
-github에 mongodb 비밀번호를 올리면 안되므로 config 폴더에 dev.js, prod.js로 비밀번호를 파일로 나눠준다.
-
-gitignore에 dev.js 파일을 등록한다.
-
-prod.js 는 deploy 할 때 필요, ex) heroku
-
-key.js 는 개발환경인지 배포환경인지 보고 if문으로 선택
 
 ## Bcrypt
 
@@ -279,16 +289,6 @@ proxy server 사용 이유!
 
 4. 이용 제한된 사이트 접근 가능
 
-## Concurrently
-
-front server와 back server를 한꺼번에 킬 수 있따
-
-    npm install concurrently
-
-    "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
-
-scripts에 위 내용 추가
-
 ## antd
 
 https://ant.design/
@@ -304,3 +304,13 @@ https://ant.design/components/button/
     import "antd/dist/antd.css";
 
 index.js에 import
+
+## Redux
+
+state가 변하면 rerendering되는 성질을 가지고 있다.
+
+props는 부모 props가 내려다 줌.
+
+Redux는 State을 관리하는 것.
+
+Redux Store에 바로 주고받기가 가능.
