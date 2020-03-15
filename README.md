@@ -284,3 +284,23 @@ proxy server 사용 이유!
 front server와 back server를 한꺼번에 킬 수 있따
 
     npm install concurrently
+
+    "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
+
+scripts에 위 내용 추가
+
+## antd
+
+https://ant.design/
+
+https://ant.design/components/button/
+
+단점 : 사이즈가 크다.
+
+장점 : 스타일이 깔끔하다. 쓰기가 편하다.
+
+    npm install antd --save
+
+    import "antd/dist/antd.css";
+
+index.js에 import
