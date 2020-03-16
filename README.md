@@ -383,3 +383,13 @@ redux extension 을 사용하려면 Reducer 뒤에 밑에 코드를 넣어줌
 
     window.__REDUX_DEVTOOLS_EXTENSION__ &&
     window.__REDUX_DEVTOOLS_EXTENSION__()
+
+## React hooks
+
+    this.state = { name: "" };
+    const [ Name, setName ] = useState("");
+
+    componentDidMount() {};
+    useEffect(() => {}, []);
+
+functional component, class component 같은 기능
