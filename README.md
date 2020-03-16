@@ -393,3 +393,21 @@ redux extension 을 사용하려면 Reducer 뒤에 밑에 코드를 넣어줌
     useEffect(() => {}, []);
 
 functional component, class component 같은 기능
+
+## Redux login page
+
+    import { useDispatch } from "react-redux";
+
+    const dispatch = useDispatch();
+
+    dispatch(loginUser(body)) // _actions 폴더에 user_actions.js 파일이 있어야함.
+
+LoginPage.js 내용
+
+원래 LoginPage.js 에서 했던 axios request를 user_actions.js에서 하는 것이다.
+
+리덕스 존나 어려움
+
+https://www.youtube.com/watch?v=BpE2IYu2p-0&list=PL9a7QRYt5fqkZC9jc7jntD1WuAogjo_9T&index=29
+
+https://www.youtube.com/watch?v=dFqb4KvRpNA&list=PL9a7QRYt5fqkZC9jc7jntD1WuAogjo_9T&index=30
