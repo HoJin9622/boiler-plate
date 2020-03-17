@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { loginUser } from "../../../_actions/user_actions";
-import { PromiseProvider } from "mongoose";
 
 function LoginPage(props) {
   const dispatch = useDispatch();
