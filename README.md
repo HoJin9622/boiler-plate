@@ -411,3 +411,11 @@ LoginPage.js 내용
 https://www.youtube.com/watch?v=BpE2IYu2p-0&list=PL9a7QRYt5fqkZC9jc7jntD1WuAogjo_9T&index=29
 
 https://www.youtube.com/watch?v=dFqb4KvRpNA&list=PL9a7QRYt5fqkZC9jc7jntD1WuAogjo_9T&index=30
+
+## react-router-dom
+
+props.history.push가 react-router-dom을 이용하는거라서
+
+import { withRouter } from "react-router-dom"; 을 해주고
+
+export 할때 withRouter(component) 를 해줘야한다.
